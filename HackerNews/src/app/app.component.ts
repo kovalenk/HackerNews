@@ -1,7 +1,4 @@
 import {Component} from '@angular/core';
-import {SwUpdate} from '@angular/service-worker';
-import {DataService} from './data.service';
-import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -15,15 +12,6 @@ export class AppComponent {
         myUrl: any;
 
   title = 'HackerNews';
-
-  constructor(updates: SwUpdate, private data: DataService, private http: HttpClient, private Test1: any, private Test2: any) {
-    updates.available.subscribe(event => {
-
-      // this.update = true;
-      updates.activateUpdate().then(() => document.location.reload());
-
-    });
-  }
 
   // ngOnInit() {
   //   this.data.gimmeJokes().subscribe(res => {

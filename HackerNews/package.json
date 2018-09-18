@@ -7,17 +7,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "pre-commit": "lint-staged"
-  },
-  "pre-commit": [
-    "pre-commit"
-  ],
-  "lint-staged": {
-    "*.{js, ts, css, json}": [
-      "prettier --write",
-      "git add"
-    ]
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
@@ -50,9 +40,8 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "lint-staged": "^7.2.2",
     "pre-commit": "^1.2.2",
-    "prettier": "^1.14.2",
+    "prettier": "1.14.2",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
