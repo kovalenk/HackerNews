@@ -24,7 +24,3 @@ function __importStar(mod) {
   result.default = mod;
   return result;
 }
-
-function __importDefault(mod) {
-  return (mod && mod.__esModule) ? mod : { default: mod };
-}
