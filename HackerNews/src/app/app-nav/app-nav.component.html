@@ -1,32 +1,28 @@
-<nav class=" navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-  <div class="row container-fluid">
-    <div class="offset-x-3 col-xl-4 ">
-      <a href="#" class="navbar-brand ">
-        <img src="../../assets/img/MainLogo.png" height="50" width="50" alt="logo"/>
-      </a>
-    </div>
-    <div class="col-xl-8">
-      <ul class="Navigation container-fluid">
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
+  <a routerLink="/top" class="offset-2 navbar-brand">
 
-
-        <li class="   nav-item active">
-          <a href="#" class="nav-link">Top</a>
-        </li>
-        <li class="  nav-item ">
-          <a href="#" class="nav-link">New</a>
-        </li>
-        <li class="  nav-item ">
-          <a href="#" class="nav-link">Show</a>
-        </li>
-        <li class="  nav-item">
-          <a href="#" class="nav-link">Ask</a>
-        </li>
-        <li class="   nav-item">
-          <a href="#" class="nav-link">Jobs</a>
-        </li>
-      </ul>
-    </div>
+    <img class="Logo" src="../../assets/img/MainLogo.png" height="50" width="50"/></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="ActivePnt nav-item">
+        <a routerLink="/top" class=" nav-link ">Top</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/new" class="nav-link">New</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/show" class="nav-link">Show</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/ask" class="nav-link">Ask</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/jobs" class="nav-link">Jobs</a>
+      </li>
+    </ul>
   </div>
-
-
 </nav>
+<router-outlet></router-outlet>
