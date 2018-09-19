@@ -12,7 +12,7 @@ import { AskComponent } from "./ask/ask.component";
 import { JobsComponent } from "./jobs/jobs.component";
 import { HttpClientModule } from "@angular/common/http";
 import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
-
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +29,8 @@ import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
     BrowserAnimationsModule,
     LayoutModule,
     AppRoutingModule,
-    HttpClientInMemoryWebApiModule
+    HttpClientInMemoryWebApiModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

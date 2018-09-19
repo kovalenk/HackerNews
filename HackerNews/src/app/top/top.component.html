@@ -1,3 +1,47 @@
-<p>
-  top works!
-</p>
+  <div>
+    <div class="container Mycontainer" id="topList">
+      <!--<div class="MainTempl">-->
+        <!--<div class="col-sm-12 title">-->
+          <!--<a href="{{jokes.url}}"><h2 class="">{{jokes.title}}</h2></a>-->
+          <!--<hr>-->
+        <!--</div>-->
+        <!--<div class="row TemplCenter">-->
+          <!--<div class="align-items-center offset-sm-10  col-sm-1 store row">-->
+            <!--<img src="../../assets/img/_ionicons_svg_md-star.svg" alt="star Icon" height="30" width="30">-->
+            <!--<h5 >{{jokes.score}}</h5>-->
+          <!--</div>-->
+          <!--<div class=" col-sm-1 types" *ngIf="jokes.type=='story'">-->
+            <!--<img src="../../assets/img/script.png" height="70" width="70"/>-->
+          <!--</div>-->
+          <!--<div class=" col-sm-1 types" *ngIf="jokes.type=='job'">-->
+
+            <!--<img src="../../assets/img/resume.png" height="70" width="70"/>-->
+          <!--</div>-->
+          <!--<div class=" col-sm-1 types" *ngIf="jokes.type=='comment'">-->
+
+            <!--<img src="../../assets/img/chat.png" height="70" width="70"/>-->
+          <!--</div>-->
+          <!--<div class=" col-sm-1 types" *ngIf="jokes.type=='pollopt'">-->
+
+            <!--<img src="../../assets/img/poll.png" height="70" width="70"/>-->
+          <!--</div>-->
+          <!--<div class="col-sm-1 types" *ngIf="jokes.type=='poll'">-->
+
+            <!--<img src="../../assets/img/elections.png" height="70" width="70"/>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="row TemplBott">-->
+          <!--<div class="col-sm-2 by">-->
+            <!--<h5 >By {{jokes.by}}</h5>-->
+          <!--</div>-->
+          <!--<div class="col-sm-2 comments">-->
+            <!--<h5>{{jokes.descendants}} comments</h5>-->
+          <!--</div>-->
+          <!--<div class=" col-sm-2 time">-->
+            <!--<h5  *ngIf="time">{{time}}</h5>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+      <ngb-pagination [collectionSize]="70" [(page)]="page" [boundaryLinks]="true" ></ngb-pagination>
+    </div>
+  </div>
