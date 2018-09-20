@@ -9,14 +9,23 @@ import * as $ from "jquery";
   styleUrls: ["./top.component.css"]
 })
 export class TopComponent implements OnInit {
+  public page: number;
+  public collectionSize: number;
   addTempl: any;
   jokes: any;
   str: any;
   myUrl: any;
   time: any;
   typeStore: any;
-  constructor(private http: HttpClient, private data: GivelistService) {}
-
+  constructor(private http: HttpClient, private data: GivelistService) {
+    this.page = 1;
+    this.data.gimmeJokes().subscribe(res => {
+      this.collectionSize = Object.keys(res).length;
+    });
+  }
+  onPageChanged(pageNumber) {
+    console.log("changed page");
+  }
   ngOnInit() {
     this.data.gimmeJokes().subscribe(res => {
       this.str = `https://hacker-news.firebaseio.com/v0/item/${
@@ -24,7 +33,7 @@ export class TopComponent implements OnInit {
       }.json?print=pretty`;
       this.data.getData(this.str).subscribe(rez => {
         this.jokes = rez;
-        this.myUrl = " // " + rez.url.split("/")[2];
+        //this.myUrl = " // " + rez.url.split("/")[2];
         switch (rez.type) {
           case "story":
             this.typeStore = `<div class="col-sm-1 types" *ngIf="rez.type=='story'">
@@ -78,7 +87,6 @@ export class TopComponent implements OnInit {
            </div>
          </div>`;
         $("#topList").append(this.addTempl);
-        // document.getElementById('topList').innerHTML =  this.addTempl;
       });
     });
   }

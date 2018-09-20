@@ -6,6 +6,8 @@
 .nav-link {
   margin: 7px 9px;
 }
+.nav-link:hover {
+}
 .Logo {
   border-radius: 3px;
   margin: 0px 2px;

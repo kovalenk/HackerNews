@@ -13,6 +13,7 @@ import { JobsComponent } from "./jobs/jobs.component";
 import { HttpClientModule } from "@angular/common/http";
 import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { PaginationComponent } from "./pagination/pagination.component";
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
     NewComponent,
     ShowComponent,
     AskComponent,
-    JobsComponent
+    JobsComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,
