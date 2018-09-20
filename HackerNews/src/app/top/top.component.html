@@ -1,6 +1,54 @@
-  <div>
-    <div class="container Mycontainer" id="topList">
-    </div>
-    <ngb-pagination class="MyPagination d-flex justify-content-center" [collectionSize]="collectionSize" [maxSize]="3" [pageSize]="30" [(page)]="page"
-                    [rotate]="true" [directionLinks]="false" [boundaryLinks]="true" (pageChange)="onPageChanged($event)"></ngb-pagination>
+<div class="container Mycontainer">
+  <div class="Pagination">
+    <ngb-pagination class="d-flex justify-content-center" (pageChange)="onPageChanged($event)"
+                    [collectionSize]="collectionSize" [pageSize]="pageSize" [maxSize]="3" [rotate]="true"
+                    [(page)]="page"
+                    [boundaryLinks]="false"></ngb-pagination>
   </div>
+  <div *ngFor="let rez of DataArr" class="List" id="topList">
+    <div class="MainTempl">
+      <div class="col-sm-12 title">
+        <a href="{{rez.url}}"><h4 class="">{{rez.title}}</h4></a>
+        <hr>
+      </div>
+      <div class="row TemplCenter">
+        <div class="align-items-center offset-sm-10  col-sm-1 store row">
+          <img src="../../assets/img/_ionicons_svg_md-star.svg" alt="star Icon" height="30" width="30">
+          <h5>{{rez.score}}</h5>
+        </div>
+        <div class="col-sm-1 types" *ngIf="rez.type=='story'">
+          <div class="storyS" data-toggle="tooltip" data-placement="right" title="{{rez.type}}"></div>
+        </div>
+        <div class="col-sm-1 types" *ngIf="rez.type=='job'">
+          <div class="storyJ" data-toggle="tooltip" data-placement="right" title="{{rez.type}}"></div>
+        </div>
+        <div class="col-sm-1 types" *ngIf="rez.type=='comment'">
+          <div class="storyC" data-toggle="tooltip" data-placement="right" title="{{rez.type}}"></div>
+        </div>
+        <div class="col-sm-1 types" *ngIf="rez.type=='poll'">
+          <div class="storyP" data-toggle="tooltip" data-placement="right" title="{{rez.type}}"></div>
+        </div>
+        <div class="col-sm-1 types" *ngIf="rez.type=='pollopt'">
+          <div class="storyPt" data-toggle="tooltip" data-placement="right" title="{{rez.type}}"></div>
+        </div>
+      </div>
+      <div class="row TemplBott">
+        <div class="col-sm-2 by">
+          <h5>By {{rez.by}}</h5>
+        </div>
+        <div class="col-sm-2 comments">
+          <h5>{{rez.descendants}} comments</h5>
+        </div>
+        <div class=" col-sm-2 time">
+          <h5 *ngIf="time">{{time}}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="page!=''" class="Pagination">
+    <a routerLink="/top" [queryParams]="{'page': 2 }" class=" nav-link ">next-></a>
+  </div>
+
+</div>
+
+

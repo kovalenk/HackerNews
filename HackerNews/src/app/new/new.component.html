@@ -1,3 +1,7 @@
-<p>
-  new works!
-</p>
+
+<div >
+  <div class="container Mycontainer" id="topList">
+  </div>
+  <ngb-pagination class="MyPagination d-flex justify-content-center" [collectionSize]="collectionSize" [maxSize]="3" [pageSize]="pageSize" [(page)]="page"
+                  [rotate]="true" [directionLinks]="false" [boundaryLinks]="true" (pageChange)="onPageChanged($event)"></ngb-pagination>
+</div>
