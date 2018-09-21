@@ -13,8 +13,4 @@ export class GivelistService {
       `https://hacker-news.firebaseio.com/v0/${stories}.json?print=pretty`
     );
   }
-  getData(str: string): any {
-    return this.http.get(str);
-  }
-
 }

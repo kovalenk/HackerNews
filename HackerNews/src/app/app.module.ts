@@ -10,6 +10,8 @@ import { JobsComponent } from './jobs/jobs.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {AppRoutingModule} from './app-routing.module';
+import {PaginatorComponent} from "./paginator/paginator.component";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +21,7 @@ import {AppRoutingModule} from './app-routing.module';
     ShowComponent,
     AskComponent,
     JobsComponent,
+    PaginatorComponent
   ],
   imports: [
     BrowserModule,

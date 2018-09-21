@@ -1,75 +1,74 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {GivelistService} from '../givelist.service';
-import { ActivatedRoute} from '@angular/router';
 import * as $ from 'jquery';
-import {Subscription} from 'rxjs';
+
 @Component({
   selector: 'app-top',
   templateUrl: './top.component.html',
   styleUrls: ['./top.component.css']
 })
 export class TopComponent implements OnInit {
-  public page: number;
-  public collectionSize: number;
-  public ArrBgn: number;
-  public ArrEnd: number;
-  public pageSize = 20;
-  public StoryType = 'topstories';
-  News: any;
-  str: any;
-  time: any;
-  // typeStore: any;
-   private  id: any;
-  private DataArr = [];
-  private routeSubscription: Subscription;
-  private querySubscription: Subscription;
-  constructor( private http: HttpClient,    private data: GivelistService,  private route: ActivatedRoute) {
-    this.page = 1;
+  page: number = 1;
+  collectionSize: number;
+  pageSize = 2;
+  private HtmlCode = "";
+  constructor(
+    private http: HttpClient,
+    private data: GivelistService) {
+  }
+
+  change() {
+    document.getElementById("topList").innerHTML = "";
     this.loadPage();
   }
-  onPageChanged() {
-    //document.getElementById("topList").innerHTML = "";
-    console.log(this.page);
-    this.loadPage();
-  }
+
   ngOnInit() {
-
+    this.loadPage();
   }
-  private loadPage() {
-    this.data.GetNews(this.StoryType).subscribe(res => {
+  loadPage() {
+      this.data.GetNews('topstories').subscribe(res => {
       this.collectionSize = Object.keys(res).length;
-       // this.routeSubscription = this.route.params.subscribe(params => this.id = params['id']);
-       // this.querySubscription = this.route.queryParams.subscribe(
-       //   (queryParam: any) => {
-       //     this.page = queryParam['page'];
-
-          this.ArrBgn = this.page * this.pageSize;
-          this.ArrEnd = this.ArrBgn + this.pageSize;
-
-         // }
-       // );
-
-      for (this.ArrBgn; this.ArrBgn < this.ArrEnd; this.ArrBgn++) {
-        this.str = `https://hacker-news.firebaseio.com/v0/item/${
-          res[this.ArrBgn]
-          }.json?print=pretty`;
-        this.data.getData(this.str).subscribe(rez => {
-          this.DataArr.push(rez);
-          this.News = rez;
-          this.time = this.SecondsConv(rez.time);
+      let ArrBgn = this.page * this.pageSize;
+      let ArrEnd = ArrBgn + this.pageSize;
+      for (ArrBgn; ArrBgn < ArrEnd; ArrBgn++) {
+          this.http.get(
+          `https://hacker-news.firebaseio.com/v0/item/${res[ArrBgn]}.json?print=pretty`).subscribe(rez => {
+          let time = this.SecondsConv(rez.time);
+          let Comments = "";
+          if (rez.descendants == "discuss") {Comments = "discuss";}
+          else Comments = rez.descendants + " comments";
+          this.HtmlCode += `<div class="MainTempl">
+              <div class="col-sm-12 title">
+                <a href="${rez.url}"><h4 class="">${rez.title}</h4></a>
+                <hr>
+              </div>
+              <div class="row TemplBott">
+                <div class="justify-content-center col-sm-3 by">
+                  <h5>By ${rez.by}</h5>
+                </div>
+                <div class="col-sm-3 comments"><h5>${Comments}</h5></div>
+                <div class="justify-content-center col-sm-3 time">
+                  <h5>${time}</h5>
+                </div>
+                <div class="justify-content-start offset-sm-1 col-sm-2 store row">
+                  <img src="../../assets/img/_ionicons_svg_md-star.svg" alt="star Icon" height="30" width="30">
+                  <h5 >${rez.score}</h5>
+                </div>
+              </div>
+            </div>`;
         });
       }
-
+      console.log(this.HtmlCode);
+      $("#topList").append(this.HtmlCode);
+      this.HtmlCode = "";
     });
-    this.page = this.page +1;
   }
 
 
   SecondsConv(num: number) {
-    const Now = Math.round(new Date().getTime() / 1000.0);
-    const Mydate = new Date(num * 1000);
-    const diff = Now - num;
+    let Now = Math.round(new Date().getTime() / 1000.0);
+    let diff = Now - num;
     if (Math.floor(diff / (3600 * 24)) > 0) {
       if (Math.floor(diff / (3600 * 24)) === 1) {
         return 'a day ago';

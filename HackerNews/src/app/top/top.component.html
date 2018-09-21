@@ -1,38 +1,16 @@
 <div class="container Mycontainer">
-  <div class="Pagination">
-    <ngb-pagination class="d-flex justify-content-center" (pageChange)="onPageChanged($event)"
-                    [collectionSize]="collectionSize" [pageSize]="pageSize" [maxSize]="3" [rotate]="true"
-                    [(page)]="page"
-                    [boundaryLinks]="false"></ngb-pagination>
+  <div class="List" id="topList">
   </div>
-  <div *ngFor="let rez of DataArr" class="List" id="topList">
-    <div class="MainTempl">
-      <div class="col-sm-12 title">
-        <a href="{{rez.url}}"><h4 class="">{{rez.title}}</h4></a>
-        <hr>
-      </div>
-      <div class="row TemplBott">
-        <div class="justify-content-center col-sm-3 by">
-          <h5>By {{rez.by}}</h5>
-        </div>
-        <div *ngIf="rez.descendants == 'discuss'; else content" class="col-sm-3 comments">
-          <h5>{{rez.descendants}}</h5>
-        </div>
-        <ng-template #content><div class="col-sm-3 comments"><h5>{{rez.descendants}} comments</h5></div></ng-template>
-        <div class="justify-content-center col-sm-3 time">
-          <h5 *ngIf="time">{{time}}</h5>
-        </div>
-        <div class="justify-content-start offset-sm-1 col-sm-2 store row">
-          <img src="../../assets/img/_ionicons_svg_md-star.svg" alt="star Icon" height="30" width="30">
-          <h5 >{{rez.score}}</h5>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div *ngIf="page!=''" class="Pagination">
-    <a routerLink="/top" [queryParams]="{'page': 2 }" class=" nav-link ">next-></a>
-  </div>
+  <br><br>
 
+</div>
+<div class="foter">
+  <div class="pgcontainer">
+    <ngb-pagination class="d-flex justify-content-center" [collectionSize]="collectionSize" [maxSize]="4" [pageSize]="pageSize" [(page)]="page" [rotate]="true" (pageChange)="change($event)"></ngb-pagination>
+  </div>
 </div>
 
 
+<!--<div class="foter">-->
+  <!--<app-paginator (onChanged)="onChanged($event)></app-paginator>-->
+<!--</div>-->

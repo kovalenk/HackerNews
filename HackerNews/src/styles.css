@@ -1,0 +1,63 @@
+.title {
+  padding: 10px 1px 0px 0px;
+}
+.title a, .title a:hover {
+  font-family: "Arial Rounded MT Bold" "Bell MT";
+  font-weight: 700;
+  line-height: 1em;
+  color: black;
+  text-decoration: none;
+}
+
+.Mycontainer {
+  border-left: 1px solid rgba(119, 128, 117, 0.3);
+  border-right: 1px solid rgba(119, 128, 117, 0.3);
+}
+.store h5 {
+  padding-top: 3px;
+  padding-left: 15px;
+}
+.comments {
+  text-decoration: underline;
+}
+
+.MainTempl {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.8);
+  border-style: none none dotted none;
+}
+
+.Pagination{
+  padding: 10px 1px;
+}
+.Mtooltip{
+  position: relative;
+}
+.tooltiptext {
+  position: absolute;
+  background-color: #484343;
+  color: #fff;
+  width: auto;
+  top: 2%;
+  left: 105%;
+  margin-left: 0px;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  z-index: 1;
+  white-space: nowrap;
+}
+.tooltiptext span{
+  padding: 0px 10px;
+}
+
+.tooltiptext::after {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 8px;
+  margin-left: -5px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent #484343 transparent transparent;
+
+}

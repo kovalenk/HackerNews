@@ -1,0 +1,10 @@
+<!--<div class="container" *ngIf="page">-->
+  <!--<button (click)="pageChange.emit(page.previous)" [disabled]="!page.previous">&lsaquo;</button>-->
+  <!--<span>-->
+    <!--{{ page }}-->
+  <!--</span>-->
+  <!--<button (click)="pageChange.emit(page.next)" [disabled]="!page.next">&rsaquo;</button>-->
+<!--</div>-->
+<div class="container">
+  <ngb-pagination class="d-flex justify-content-center" [collectionSize]="collectionSize" [maxSize]="3" [pageSize]="pageSize" [(page)]="page" [rotate]="true" (pageChange)="change($event)"></ngb-pagination>
+</div>
