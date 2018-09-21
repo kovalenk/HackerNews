@@ -11,36 +11,20 @@
         <a href="{{rez.url}}"><h4 class="">{{rez.title}}</h4></a>
         <hr>
       </div>
-      <div class="row TemplCenter">
-        <div class="align-items-center offset-sm-10  col-sm-1 store row">
-          <img src="../../assets/img/_ionicons_svg_md-star.svg" alt="star Icon" height="30" width="30">
-          <h5>{{rez.score}}</h5>
-        </div>
-        <div class="col-sm-1 types" *ngIf="rez.type=='story'">
-          <div class="storyS" data-toggle="tooltip" data-placement="right" title="{{rez.type}}"></div>
-        </div>
-        <div class="col-sm-1 types" *ngIf="rez.type=='job'">
-          <div class="storyJ" data-toggle="tooltip" data-placement="right" title="{{rez.type}}"></div>
-        </div>
-        <div class="col-sm-1 types" *ngIf="rez.type=='comment'">
-          <div class="storyC" data-toggle="tooltip" data-placement="right" title="{{rez.type}}"></div>
-        </div>
-        <div class="col-sm-1 types" *ngIf="rez.type=='poll'">
-          <div class="storyP" data-toggle="tooltip" data-placement="right" title="{{rez.type}}"></div>
-        </div>
-        <div class="col-sm-1 types" *ngIf="rez.type=='pollopt'">
-          <div class="storyPt" data-toggle="tooltip" data-placement="right" title="{{rez.type}}"></div>
-        </div>
-      </div>
       <div class="row TemplBott">
-        <div class="col-sm-2 by">
+        <div class="justify-content-center col-sm-3 by">
           <h5>By {{rez.by}}</h5>
         </div>
-        <div class="col-sm-2 comments">
-          <h5>{{rez.descendants}} comments</h5>
+        <div *ngIf="rez.descendants == 'discuss'; else content" class="col-sm-3 comments">
+          <h5>{{rez.descendants}}</h5>
         </div>
-        <div class=" col-sm-2 time">
+        <ng-template #content><div class="col-sm-3 comments"><h5>{{rez.descendants}} comments</h5></div></ng-template>
+        <div class="justify-content-center col-sm-3 time">
           <h5 *ngIf="time">{{time}}</h5>
+        </div>
+        <div class="justify-content-start offset-sm-1 col-sm-2 store row">
+          <img src="../../assets/img/_ionicons_svg_md-star.svg" alt="star Icon" height="30" width="30">
+          <h5 >{{rez.score}}</h5>
         </div>
       </div>
     </div>

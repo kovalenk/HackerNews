@@ -17,9 +17,6 @@
   padding-top: 3px;
   padding-left: 15px;
 }
-.store img {
-  margin-left: -20px;
-}
 .comments {
   text-decoration: underline;
 }
@@ -28,27 +25,10 @@
   border-bottom: 2px solid rgba(0, 0, 0, 0.8);
   border-style: none none dotted none;
 }
-.TemplBott {
-  margin-top: -23px;
-}
-.TemplCenter {
-  margin-top: -8px;
-}
 
 .Pagination{
  padding: 10px 1px;
 }
-.storyS, .storyJ, .storyC, .storyP, .storyPt{
-  width: 35px;
-  height: 35px;
-  border: 2px solid black;
-}
-.storyS{  background-color: #ff8100;}
-.storyJ{  background-color: #006dff;}
-.storyC{  background-color: #fff600;}
-.storyP{  background-color: #6aff7d;}
-.storyPt{  background-color: #250a60;}
-
 .Mtooltip{
   position: relative;
 }
