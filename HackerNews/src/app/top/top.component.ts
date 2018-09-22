@@ -11,13 +11,12 @@ import * as $ from 'jquery';
 export class TopComponent implements OnInit {
   page: number = 1;
   collectionSize: number;
-  pageSize = 2;
-  private HtmlCode = "";
+  pageSize = 10;
+  private HtmlCode:any;
   constructor(
     private http: HttpClient,
     private data: GivelistService) {
   }
-
   change() {
     document.getElementById("topList").innerHTML = "";
     this.loadPage();
@@ -32,13 +31,13 @@ export class TopComponent implements OnInit {
       let ArrBgn = this.page * this.pageSize;
       let ArrEnd = ArrBgn + this.pageSize;
       for (ArrBgn; ArrBgn < ArrEnd; ArrBgn++) {
-          this.http.get(
-          `https://hacker-news.firebaseio.com/v0/item/${res[ArrBgn]}.json?print=pretty`).subscribe(rez => {
+          this.data.GetData(res[ArrBgn]).subscribe(rez => {
+            console.log(rez);
           let time = this.SecondsConv(rez.time);
           let Comments = "";
           if (rez.descendants == "discuss") {Comments = "discuss";}
           else Comments = rez.descendants + " comments";
-          this.HtmlCode += `<div class="MainTempl">
+          this.HtmlCode = `<div class="MainTempl">
               <div class="col-sm-12 title">
                 <a href="${rez.url}"><h4 class="">${rez.title}</h4></a>
                 <hr>
@@ -57,12 +56,13 @@ export class TopComponent implements OnInit {
                 </div>
               </div>
             </div>`;
+            $("#topList").append(this.HtmlCode);
         });
       }
-      console.log(this.HtmlCode);
-      $("#topList").append(this.HtmlCode);
-      this.HtmlCode = "";
+
     });
+      this.HtmlCode = "";
+
   }
 
 

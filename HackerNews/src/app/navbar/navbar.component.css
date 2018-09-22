@@ -1,0 +1,16 @@
+.nav-link {
+  margin: 7px 9px;
+}
+.nav-link:hover {
+}
+.Logo {
+  height: 40px;
+  width: 50px;
+  padding: 0px 5px;
+  border-radius: 3px;
+  margin: 0px 2px;
+  background-color: #1dd949;
+}
+.btn-outline-success{
+  border: none;
+}

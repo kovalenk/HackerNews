@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { AppNavComponent } from './app-nav/app-nav.component';
 import { TopComponent } from './top/top.component';
 import { NewComponent } from './new/new.component';
 import { ShowComponent } from './show/show.component';
@@ -10,18 +9,17 @@ import { JobsComponent } from './jobs/jobs.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {AppRoutingModule} from './app-routing.module';
-import {PaginatorComponent} from "./paginator/paginator.component";
+import {NavbarComponent} from "./navbar/navbar.component";
 
 @NgModule({
   declarations: [
     AppComponent,
-    AppNavComponent,
+    NavbarComponent,
     TopComponent,
     NewComponent,
     ShowComponent,
     AskComponent,
-    JobsComponent,
-    PaginatorComponent
+    JobsComponent
   ],
   imports: [
     BrowserModule,

@@ -13,4 +13,11 @@ export class GivelistService {
       `https://hacker-news.firebaseio.com/v0/${stories}.json?print=pretty`
     );
   }
+
+  GetData(StoryId : number):any {
+    return this.http.get(
+      `https://hacker-news.firebaseio.com/v0/item/${StoryId}.json?print=pretty`
+    );
+  }
+
 }

@@ -1,7 +1,11 @@
-
-<div >
-  <div class="container Mycontainer" id="topList">
+<div class="container Mycontainer">
+  <div class="List" id="NewsList">
   </div>
-  <ngb-pagination class="MyPagination d-flex justify-content-center" [collectionSize]="collectionSize" [maxSize]="3" [pageSize]="pageSize" [(page)]="page"
-                  [rotate]="true" [directionLinks]="false" [boundaryLinks]="true" (pageChange)="onPageChanged($event)"></ngb-pagination>
+  <br><br>
+
+</div>
+<div class="foter">
+  <div class="pgcontainer">
+    <ngb-pagination class="d-flex justify-content-center" [collectionSize]="collectionSize" [maxSize]="4" [pageSize]="pageSize" [(page)]="page" [rotate]="true" (pageChange)="change($event)"></ngb-pagination>
+  </div>
 </div>
