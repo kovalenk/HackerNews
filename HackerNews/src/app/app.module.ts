@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {AppRoutingModule} from './app-routing.module';
 import {NavbarComponent} from "./navbar/navbar.component";
+import { CommentsComponent } from './comments/comments.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {NavbarComponent} from "./navbar/navbar.component";
     NewComponent,
     ShowComponent,
     AskComponent,
-    JobsComponent
+    JobsComponent,
+    CommentsComponent
   ],
   imports: [
     BrowserModule,

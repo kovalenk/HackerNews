@@ -6,6 +6,7 @@ import { NewComponent } from './new/new.component';
 import { ShowComponent } from './show/show.component';
 import { AskComponent } from './ask/ask.component';
 import { JobsComponent } from './jobs/jobs.component';
+import {CommentsComponent} from "./comments/comments.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/top', pathMatch: 'full' },
@@ -13,7 +14,9 @@ const routes: Routes = [
   { path: 'new', component: NewComponent },
   { path: 'show', component: ShowComponent },
   { path: 'ask', component: AskComponent },
-  { path: 'jobs', component: JobsComponent }
+  { path: 'jobs', component: JobsComponent },
+  { path: 'comments', component: CommentsComponent },
+
 ];
 
 @NgModule({

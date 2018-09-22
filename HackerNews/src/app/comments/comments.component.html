@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="Ctitle">
+    <h2>{{title}}</h2>
+  </div>
+  <div class="row TemplBott">
+    <div class="col-sm-3 comments">
+      <h5>By {{by}}</h5>
+    </div>
+    <div class="justify-content-center col-sm-3 time">
+      <h5> {{time}} </h5>
+    </div>
+    <div class="offset-sm-4 col-sm-2 store row justify-content-end">
+      <img src="../../assets/img/_ionicons_svg_md-star.svg" alt="star Icon" height="30" width="30">
+      <h5 >{{score}}</h5>
+    </div>
+  </div>
+  <div class="Ctitle">
+    <h3>Comments</h3>
+  </div>
+  <div id="CommentContainer"></div>
+
+  <div class="CommentContainer" *ngFor="let items of Comments">
+    <div class="item">
+      <div class="row">
+        <div class="col-sm-3 userIcon align-items-center text-sm-center">
+          <img src="../../assets/img/user.svg" alt="icon">
+          <h4> By {{items.by}}</h4>
+        </div>
+        <div class="offset-sm-6 col-sm-3 time text-sm-right">
+          <h5> {{items.time}}</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 text">
+          <p>{{items.text}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

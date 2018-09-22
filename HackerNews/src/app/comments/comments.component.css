@@ -1,0 +1,16 @@
+.Ctitle{
+  padding: 20px;
+}
+.CommentContainer{
+  margin: 5px 0px;
+  border: 2px solid gray;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #ffefef;
+}
+
+.userIcon img{
+  width: 50px;
+  height: 50px;
+}
