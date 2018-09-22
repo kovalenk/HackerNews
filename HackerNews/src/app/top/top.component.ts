@@ -32,8 +32,6 @@ export class TopComponent implements OnInit {
       let ArrEnd = ArrBgn + this.pageSize;
       for (ArrBgn; ArrBgn < ArrEnd; ArrBgn++) {
           this.data.GetData(res[ArrBgn]).subscribe(rez => {
-
-            console.log(rez);
           let time = this.data.SecondsConv(rez.time);
           let Comments = "";
           if (rez.descendants == "discuss" || rez.descendants == "0" || rez.descendants == undefined) {Comments = "discuss";}
@@ -61,11 +59,7 @@ export class TopComponent implements OnInit {
             $("#topList").append(this.HtmlCode);
         });
       }
-
     });
-      this.HtmlCode = "";
-
+    this.HtmlCode = "";
   }
-
-
 }

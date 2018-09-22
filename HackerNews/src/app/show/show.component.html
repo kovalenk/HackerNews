@@ -1,5 +1,9 @@
-<p>
-  show works!
-  <a routerLink="/comments" class="nav-link btn btn-outline-success"> netss</a>
-
-</p>
+<div class="container Mycontainer">
+  <div class="List" id="ShowList">
+  </div>
+</div>
+<div class="foter">
+  <div class="pgcontainer">
+    <ngb-pagination class="d-flex justify-content-center" [collectionSize]="collectionSize" [maxSize]="5" [pageSize]="pageSize" [(page)]="page" [rotate]="true" (pageChange)="change($event)"></ngb-pagination>
+  </div>
+</div>

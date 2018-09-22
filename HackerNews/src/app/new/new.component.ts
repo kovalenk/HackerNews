@@ -32,11 +32,9 @@ export class NewComponent implements OnInit {
       let ArrEnd = ArrBgn + this.pageSize;
       for (ArrBgn; ArrBgn < ArrEnd; ArrBgn++) {
         this.data.GetData(res[ArrBgn]).subscribe(rez => {
-          console.log(rez);
-
-          let time = this.SecondsConv(rez.time);
+          let time = this.data.SecondsConv(rez.time);
           let Comments = "";
-          if (rez.descendants == "discuss") {Comments = "discuss";}
+          if (rez.descendants == "discuss" || rez.descendants == "0" || rez.descendants == undefined) {Comments = "discuss";}
           else Comments = rez.descendants + " comments";
           this.HtmlCode = `<div class="MainTempl">
               <div class="col-sm-12 title">
@@ -47,7 +45,8 @@ export class NewComponent implements OnInit {
                 <div class="justify-content-center col-sm-3 by">
                   <h5>By ${rez.by}</h5>
                 </div>
-                <div class="col-sm-3 comments"><h5>${Comments}</h5></div>
+                <div class="col-sm-3 comments col-sm-3 ">
+                <a _ngcontent-c3 ng-reflect-query-params="[object Object]" ng-reflect-router-link="/comments" href="/comments?id=${rez.id}"><h5>${Comments}</h5></a></div>
                 <div class="justify-content-center col-sm-3 time">
                   <h5>${time}</h5>
                 </div>
@@ -60,35 +59,7 @@ export class NewComponent implements OnInit {
           $("#NewsList").append(this.HtmlCode);
         });
       }
-
     });
     this.HtmlCode = "";
-
-  }
-
-  SecondsConv(num: number) {
-    let Now = Math.round(new Date().getTime() / 1000.0);
-    let diff = Now - num;
-    if (Math.floor(diff / (3600 * 24)) > 0) {
-      if (Math.floor(diff / (3600 * 24)) === 1) {
-        return 'a day ago';
-      } else {
-        return Math.floor(diff / (3600 * 24)) + ' days ago';
-      }
-    } else {
-      if (Math.floor(diff / 3600) > 0) {
-        if (Math.floor(diff / 3600) === 1) {
-          return 'an hour ago';
-        } else {
-          return Math.floor(diff / 3600) + ' hours ago';
-        }
-      } else {
-        if (Math.floor(diff / 60) === 1) {
-          return 'a minute ago';
-        } else {
-          return Math.floor(diff / 60) + ' minutes ago';
-        }
-      }
-    }
   }
 }
