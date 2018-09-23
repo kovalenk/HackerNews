@@ -17,31 +17,45 @@
 }
 
 .title {
+
   padding: 10px 1px 0px 0px;
 }
 .title a, .title a:hover {
   font-family: "Arial Rounded MT Bold" "Bell MT";
   font-weight: 700;
   line-height: 1em;
-  color: black;
+  color: #245231;
   text-decoration: none;
 }
-
+.title hr{
+  width: 70%;
+}
 .Mycontainer {
   border-left: 1px solid rgba(119, 128, 117, 0.3);
   border-right: 1px solid rgba(119, 128, 117, 0.3);
 }
-.store h5 {
-  padding-top: 3px;
-  padding-left: 15px;
+
+.store h4 {
+  padding-left: 2px;
+  padding-top: 2px;
+}
+
+.store{
+  width: 100px;
+  position: absolute;
+  right: 21%;
+  margin-top: -33px;
 }
 .store img {
-  width: 25px;
-  height: 25px;
+  width: 28px;
+  height: 28px;
   margin-top: 2px;
   margin-left: 8px;
 }
-.comments a, .comments a:hover{
+.by{
+  padding-left: 10px;
+}
+.comments, .comments :hover{
   text-decoration: underline;
   color: black;
 }
@@ -97,20 +111,80 @@ body::-webkit-scrollbar-thumb {
   background-color: darkgrey;
   outline: 1px solid slategrey;
 }
+@media only screen and (max-width: 1489px) {
+  .store{
+    right: 11%;
+  }
+}
+
 @media only screen and (max-width: 765px) {
   .TemplBott h5{
     font-size: 1.0rem;
   }
-  .store img {
-    width: 17px;
-    height: 17px;
-    margin-top: 2px;
-    margin-left: 6px;
-  }
-  .store h5 {
+
+  .store h5 TemplBott{
     font-size: 0.8rem;
   }
   .title h4{
     font-size: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 577px) {
+  .store{
+    margin-top: 1px;
+    right: 3%;
+  }
+  .title hr{
+    width: 100%;
+  }
+  .time{
+    margin-top: -27px;
+    margin-left: 54%;
+  }
+.TemplBott h6{
+  margin-top: 1px;
+}
+
+  .foter{
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .store{
+    margin-top: 1px;
+    right: -4%;
+  }
+  .store h4 {
+    font-size: 0.9rem;
+    padding-left: 6px;
+    padding-top: 2px;
+  }
+  .store img {
+    width: 21px;
+    height: 21px;
+    margin-top: 0px;
+    margin-left: 8px;
+  }
+  .title hr{
+    width: 100%;
+  }
+  .time{
+    font-size: 0.8rem;
+    margin-top: -27px;
+    margin-left: 55%;
+  }
+  .time h5{
+    font-size: 0.71rem;
+    padding-top: 5px;
+  }
+  .TemplBott h6{
+    margin-top: 1px;
+    font-size: 0.75em;
+  }
+
+  .foter{
+    width: 80%;
   }
 }

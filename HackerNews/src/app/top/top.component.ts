@@ -42,17 +42,15 @@ export class TopComponent implements OnInit {
                 <hr>
               </div>
               <div class="row TemplBott align-items-center">
-                <div class="col-sm-3 by">
-                  <h5>By ${rez.by}</h5>
+                <div class="col-sm-6 row">
+                  <h6 style="padding-left: 15px;"> By <span style="color: #595959; ">${rez.by}</span></h6> <h6 style="font-weight: 700; padding: 0px 5px;">| </h6>    <a _ngcontent-c3 ng-reflect-query-params="[object Object]" ng-reflect-router-link="/comments" href="/comments?id=${rez.id}" class="comments"><h6>${Comments}</h6></a>
                 </div>
-                <div class="col-sm-3 comments col-sm-3 ">
-                <a _ngcontent-c3 ng-reflect-query-params="[object Object]" ng-reflect-router-link="/comments" href="/comments?id=${rez.id}"><h5>${Comments}</h5></a></div>
-                <div class="justify-content-center col-sm-3 time">
+                <div class="justify-content-center col-sm-4 time text-sm-right">
                   <h5>${time}</h5>
                 </div>
-                <div class="justify-content-start offset-sm-1 col-sm-2 store row">
-                  <img src="../../assets/img/_ionicons_svg_md-star.svg" alt="star Icon" height="30" width="30">
-                  <h5 >${rez.score}</h5>
+                <div class="store row">
+                  <img src="../../assets/img/_ionicons_svg_md-star.svg" alt="star Icon">
+                  <h4 >${rez.score}</h4>
                 </div>
               </div>
             </div>`;
