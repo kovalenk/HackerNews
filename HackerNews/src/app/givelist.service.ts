@@ -8,7 +8,7 @@ export class GivelistService {
     private http: HttpClient
     ) {}
 
-  GetNews(stories : string) {
+  GetNews(stories: string) {
     return this.http.get(
       `https://hacker-news.firebaseio.com/v0/${stories}.json?print=pretty`
     );
@@ -21,8 +21,8 @@ export class GivelistService {
   }
 
   SecondsConv(num: number) {
-    let Now = Math.round(new Date().getTime() / 1000.0);
-    let diff = Now - num;
+    const Now = Math.round(new Date().getTime() / 1000.0);
+    const diff = Now - num;
     if (Math.floor(diff / (3600 * 24)) > 0) {
       if (Math.floor(diff / (3600 * 24)) === 1) {
         return 'a day ago';

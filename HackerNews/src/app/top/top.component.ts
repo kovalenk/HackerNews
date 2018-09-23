@@ -41,8 +41,8 @@ export class TopComponent implements OnInit {
                 <a href="${rez.url}"><h4 class="">${rez.title}</h4></a>
                 <hr>
               </div>
-              <div class="row TemplBott">
-                <div class="justify-content-center col-sm-3 by">
+              <div class="row TemplBott align-items-center">
+                <div class="col-sm-3 by">
                   <h5>By ${rez.by}</h5>
                 </div>
                 <div class="col-sm-3 comments col-sm-3 ">

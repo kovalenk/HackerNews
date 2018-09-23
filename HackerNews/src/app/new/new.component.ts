@@ -46,7 +46,8 @@ export class NewComponent implements OnInit {
                   <h5>By ${rez.by}</h5>
                 </div>
                 <div class="col-sm-3 comments col-sm-3 ">
-                <a _ngcontent-c3 ng-reflect-query-params="[object Object]" ng-reflect-router-link="/comments" href="/comments?id=${rez.id}"><h5>${Comments}</h5></a></div>
+                <a _ngcontent-c3 ng-reflect-query-params="[object Object]" ng-reflect-router-link="/comments" href="/comments?id=${rez.id}">
+                <h5>${Comments}</h5></a></div>
                 <div class="justify-content-center col-sm-3 time">
                   <h5>${time}</h5>
                 </div>
