@@ -1,20 +1,22 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Cacheable } from 'ngx-cacheable';
 @Injectable({
   providedIn: 'root'
 })
+
 export class GivelistService {
   constructor(
     private http: HttpClient
     ) {}
-
+  @Cacheable()
   GetNews(stories: string) {
     return this.http.get(
       `https://hacker-news.firebaseio.com/v0/${stories}.json?print=pretty`
     );
   }
-
-  GetData(StoryId : number):any {
+  @Cacheable()
+  GetData(StoryId: number): any {
     return this.http.get(
       `https://hacker-news.firebaseio.com/v0/item/${StoryId}.json?print=pretty`
     );

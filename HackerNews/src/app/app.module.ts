@@ -9,9 +9,8 @@ import { JobsComponent } from './jobs/jobs.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {AppRoutingModule} from './app-routing.module';
-import {NavbarComponent} from "./navbar/navbar.component";
+import {NavbarComponent} from './navbar/navbar.component';
 import { CommentsComponent } from './comments/comments.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +26,7 @@ import { CommentsComponent } from './comments/comments.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
