@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve -o",
+    "start:prod":"ng build --prod && lite-server --baseDir dist/HackerNews",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -50,6 +51,7 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "lite-server": "^2.4.0",
     "popper": "^1.0.1",
     "pre-commit": "^1.2.2",
     "prettier": "1.14.2",

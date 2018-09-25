@@ -12,12 +12,12 @@ import * as $ from 'jquery';
   styleUrls: ['./comments.component.css']
 })
 export class CommentsComponent implements OnInit {
-  private title: string;
-  private by: string;
-  private time: any;
-  private score: number;
-  private Comments  = [];
-  private querySubscription: Subscription;
+  public title: string;
+  public by: string;
+  public time: any;
+  public score: number;
+  public Comments  = [];
+  public querySubscription: Subscription;
   constructor(
     private http: HttpClient,
     private data: GivelistService,
@@ -51,7 +51,6 @@ export class CommentsComponent implements OnInit {
   getKidsData(KidsArr: any) {
     for (let i = 0; i < KidsArr.length; i++) {
       this.data.GetData(KidsArr[i]).subscribe(comm => {
-        console.log(comm);
         if (comm.kids == undefined) {
           if (comm.deleted != true || comm.deleted == undefined) {
             comm.time = this.data.SecondsConv(comm.time);

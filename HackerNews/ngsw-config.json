@@ -19,7 +19,23 @@
       "resources": {
         "files": [
           "/assets/**"
+        ],
+        "urls": [
+          "https://hacker-news.firebaseio.com/v0/**"
         ]
+      }
+    }],
+  "dataGroups":[
+    {
+      "name":"new",
+      "urls":[
+        "https://hacker-news.firebaseio.com/v0/newstories.json?print=pretty"
+      ],
+      "cacheConfig":{
+        "maxSize": 5,
+        "maxAge": "6h",
+        "timeout":"10s",
+        "strategy": "freshness"
       }
     }
   ]
