@@ -111,12 +111,61 @@ body::-webkit-scrollbar-thumb {
   background-color: darkgrey;
   outline: 1px solid slategrey;
 }
+@media only screen and (max-width: 1720px) {
+  .store{
+    right: 18%;
+  }
+}
+@media only screen and (max-width: 1560px) {
+  .store{
+    right: 14%;
+  }
+}
 @media only screen and (max-width: 1489px) {
   .store{
     right: 11%;
   }
 }
-
+@media only screen and (max-width: 1380px) {
+  .store{
+    right: 10%;
+  }
+}
+@media only screen and (max-width: 1046px) {
+  .store{
+    right: 5%;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .store{
+    right: 14%;
+  }
+}
+@media only screen and (max-width: 893px) {
+  .store{
+    right: 10%;
+  }
+}
+@media only screen and (max-width: 796px) {
+  .store{
+    right: 6%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .store{
+    right: 15%;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .store{
+    right: 11%;
+  }
+}
+@media only screen and (max-width: 630px) {
+  .store{
+    right: 7%;
+  }
+}
 @media only screen and (max-width: 765px) {
   .TemplBott h5{
     font-size: 1.0rem;
