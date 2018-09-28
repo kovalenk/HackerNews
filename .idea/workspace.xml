@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2f099ec3-b06f-47d8-9605-ecbff7c5f25c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/HackerNews/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/HackerNews/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerNews/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/HackerNews/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerNews/src/app/app-routing.module.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HackerNews/src/app/app-routing.module.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerNews/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HackerNews/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerNews/src/app/app.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HackerNews/src/app/app.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerNews/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HackerNews/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerNews/src/app/ask/ask.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HackerNews/src/app/ask/ask.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerNews/src/app/ask/ask.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HackerNews/src/app/ask/ask.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerNews/src/app/comments/comments.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/HackerNews/src/app/comments/comments.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerNews/src/app/comments/comments.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HackerNews/src/app/comments/comments.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerNews/src/app/comments/comments.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HackerNews/src/app/comments/comments.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerNews/src/app/givelist.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HackerNews/src/app/givelist.service.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerNews/src/app/givelist.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HackerNews/src/app/givelist.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerNews/src/app/jobs/jobs.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/HackerNews/src/app/jobs/jobs.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerNews/src/app/jobs/jobs.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HackerNews/src/app/jobs/jobs.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerNews/src/app/jobs/jobs.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HackerNews/src/app/jobs/jobs.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerNews/src/app/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/HackerNews/src/app/navbar/navbar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerNews/src/app/navbar/navbar.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HackerNews/src/app/navbar/navbar.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerNews/src/app/navbar/navbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HackerNews/src/app/navbar/navbar.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerNews/src/app/new/new.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HackerNews/src/app/new/new.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerNews/src/app/new/new.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HackerNews/src/app/new/new.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerNews/src/app/show/show.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HackerNews/src/app/show/show.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerNews/src/app/show/show.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HackerNews/src/app/show/show.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerNews/src/app/top/top.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/HackerNews/src/app/top/top.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerNews/src/app/top/top.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HackerNews/src/app/top/top.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerNews/src/app/top/top.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HackerNews/src/app/top/top.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerNews/src/assets/img/user.svg" beforeDir="false" afterPath="$PROJECT_DIR$/HackerNews/src/assets/img/user.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerNews/src/browserslist" beforeDir="false" afterPath="$PROJECT_DIR$/HackerNews/src/browserslist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerNews/src/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HackerNews/src/environments/environment.prod.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerNews/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HackerNews/src/environments/environment.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerNews/src/polyfills.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HackerNews/src/polyfills.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerNews/src/test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HackerNews/src/test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerNews/src/tsconfig.app.json" beforeDir="false" afterPath="$PROJECT_DIR$/HackerNews/src/tsconfig.app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerNews/src/tsconfig.spec.json" beforeDir="false" afterPath="$PROJECT_DIR$/HackerNews/src/tsconfig.spec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerNews/src/tslint.json" beforeDir="false" afterPath="$PROJECT_DIR$/HackerNews/src/tslint.json" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1958330011">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="html" value="3" />
+          <entry key="json" value="2" />
+          <entry key="ts" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="HTML" value="3" />
+          <entry key="JSON" value="2" />
+          <entry key="TypeScript" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.js.language.service.starts">
+        <counts>
+          <entry key="Angular2LanguageService" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="ts" value="8" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="TypeScript" value="8" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HackerNews/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="6" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HackerNews/src/app/app-routing.module.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="14" column="21" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="21" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/HackerNews/src/app/navbar/navbar.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="27" lean-forward="true" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HackerNews/src/app/top/top.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="31" column="3" selection-start-line="31" selection-start-column="3" selection-end-line="31" selection-end-column="3" />
+              <folding>
+                <element signature="e#0#48#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HackerNews/src/app/top/top.component.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HackerNews/src/app/pagination/pagination.component.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HackerNews/src/app/pagination/pagination.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+              <folding>
+                <element signature="e#0#50#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HackerNews/package-lock.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-69274" />
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/HackerNews/src/app/top/top.component.ts" />
+        <option value="$PROJECT_DIR$/HackerNews/src/app/pagination/pagination.component.ts" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/HackerNews/node_modules" />
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/HackerNews/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="39" />
+    <option name="y" value="-23" />
+    <option name="width" value="1616" />
+    <option name="height" value="876" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="HackerNewsAngularPWA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HackerNewsAngularPWA" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HackerNewsAngularPWA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HackerNewsAngularPWA" type="462c0819:PsiDirectoryNode" />
+              <item name="HackerNews" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HackerNewsAngularPWA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HackerNewsAngularPWA" type="462c0819:PsiDirectoryNode" />
+              <item name="HackerNews" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HackerNewsAngularPWA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HackerNewsAngularPWA" type="462c0819:PsiDirectoryNode" />
+              <item name="HackerNews" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HackerNewsAngularPWA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HackerNewsAngularPWA" type="462c0819:PsiDirectoryNode" />
+              <item name="HackerNews" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="navbar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HackerNewsAngularPWA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HackerNewsAngularPWA" type="462c0819:PsiDirectoryNode" />
+              <item name="HackerNews" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="pagination" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HackerNewsAngularPWA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HackerNewsAngularPWA" type="462c0819:PsiDirectoryNode" />
+              <item name="HackerNews" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="top" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Kovalenk_art\AppData\Roaming\npm\node_modules\prettier" />
+    <property name="ts.external.directory.path" value="C:\Users\Kovalenk_art\Projects\HackerNewsAngularPWA\HackerNews\node_modules\typescript\lib" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="npm.start">
+    <configuration name="build" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/HackerNews/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/HackerNews/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start:prod" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/HackerNews/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start:prod" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="npm.build" />
+      <item itemvalue="npm.start" />
+      <item itemvalue="npm.start:prod" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+        <item itemvalue="npm.start:prod" />
+        <item itemvalue="npm.build" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2f099ec3-b06f-47d8-9605-ecbff7c5f25c" name="Default Changelist" comment="" />
+      <created>1538116689705</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1538116689705</updated>
+      <workItem from="1538116694514" duration="876000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="876000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24968314" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="TypeScript" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" weight="0.32884097" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32884097" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/HackerNews/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-69274" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HackerNews/src/app/pagination/pagination.component.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HackerNews/src/app/pagination/pagination.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HackerNews/src/app/top/top.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="31" column="3" selection-start-line="31" selection-start-column="3" selection-end-line="31" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HackerNews/src/app/top/top.component.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HackerNews/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HackerNews/src/app/app-routing.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="14" column="21" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HackerNews/src/app/navbar/navbar.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="27" lean-forward="true" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

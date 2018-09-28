@@ -13,6 +13,7 @@ import {NavbarComponent} from './navbar/navbar.component';
 import { CommentsComponent } from './comments/comments.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { PaginationComponent } from './pagination/pagination.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import { environment } from '../environments/environment';
     ShowComponent,
     AskComponent,
     JobsComponent,
-    CommentsComponent
+    CommentsComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,

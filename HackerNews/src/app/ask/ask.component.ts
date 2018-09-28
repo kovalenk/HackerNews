@@ -26,13 +26,13 @@ export class AskComponent implements OnInit {
     this.loadPage();
   }
   loadPage() {
-    this.data.GetNews('topstories').subscribe(res => {
+    this.data.getNews('topstories').subscribe(res => {
       this.collectionSize = Object.keys(res).length;
       let ArrBgn = this.page * this.pageSize;
       let ArrEnd = ArrBgn + this.pageSize;
       for (ArrBgn; ArrBgn < ArrEnd; ArrBgn++) {
-        this.data.GetData(res[ArrBgn]).subscribe(rez => {
-          let time = this.data.SecondsConv(rez.time);
+        this.data.getData(res[ArrBgn]).subscribe(rez => {
+          let time = this.data.secondsConv(rez.time);
           let Comments = "";
           if (rez.descendants == "discuss" || rez.descendants == "0" || rez.descendants == undefined) {Comments = "discuss";}
           else Comments = rez.descendants + " comments";

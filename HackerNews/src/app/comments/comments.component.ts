@@ -34,13 +34,13 @@ export class CommentsComponent implements OnInit {
   }
 
   loadPage(id: number) {
-    this.data.GetData(id).subscribe( rez => {
+    this.data.getData(id).subscribe( rez => {
 
       this.title = rez.title;
       this.by = rez.by;
-      this.time = this.data.SecondsConv(rez.time);
+      this.time = this.data.secondsConv(rez.time);
       this.score = rez.score;
-      if (rez.descendants == 0 || rez.descendants == undefined ) {
+      if (rez.descendants === 0 || rez.descendants === undefined ) {
         $('#CommentContainer').append('<h5> No comments yet :(</h5>');
       } else {
         this.getKidsData(rez.kids);
@@ -50,10 +50,10 @@ export class CommentsComponent implements OnInit {
 
   getKidsData(KidsArr: any) {
     for (let i = 0; i < KidsArr.length; i++) {
-      this.data.GetData(KidsArr[i]).subscribe(comm => {
-        if (comm.kids == undefined) {
-          if (comm.deleted != true || comm.deleted == undefined) {
-            comm.time = this.data.SecondsConv(comm.time);
+      this.data.getData(KidsArr[i]).subscribe(comm => {
+        if (comm.kids === undefined) {
+          if (comm.deleted !== true || comm.deleted === undefined) {
+            comm.time = this.data.secondsConv(comm.time);
             this.Comments.push(comm);
           }
         } else {

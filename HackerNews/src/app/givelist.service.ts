@@ -6,23 +6,37 @@ import { Cacheable } from 'ngx-cacheable';
 })
 
 export class GivelistService {
+  private collectionSize: any;
   constructor(
     private http: HttpClient
     ) {}
   @Cacheable()
-  GetNews(stories: string) {
+  getNews(stories: string) {
     return this.http.get(
       `https://hacker-news.firebaseio.com/v0/${stories}.json?print=pretty`
     );
   }
   @Cacheable()
-  GetData(StoryId: number): any {
+  getData(StoryId: number): any {
     return this.http.get(
       `https://hacker-news.firebaseio.com/v0/item/${StoryId}.json?print=pretty`
     );
   }
 
-  SecondsConv(num: number) {
+  listViewCreate(type: string, begin: number, end: number ): any {
+    let ListAr = [];
+    this.getNews(type).subscribe( res => {
+      for (begin; begin < end; begin++) {
+        this.getData(res[begin]).subscribe(rez => {
+          rez.time = this.secondsConv(rez.time);
+          ListAr.push(rez);
+        });
+      }
+    });
+    return ListAr;
+  }
+
+  secondsConv(num: number) {
     const Now = Math.round(new Date().getTime() / 1000.0);
     const diff = Now - num;
     if (Math.floor(diff / (3600 * 24)) > 0) {
