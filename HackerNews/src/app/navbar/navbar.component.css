@@ -1,6 +1,18 @@
+.Active{
+  background-color: #569851;
+  color: white;
+  font-weight: 500;
+}
+.btn-outline-success:hover {
+  color: #fff;
+  background-color: #569851;
+  border-color: #28a745;
+
+}
 .nav-link {
   margin: 7px 9px;
 }
+
 .nav-link:hover {
 }
 .Logo {
@@ -12,5 +24,18 @@
   background-color: #1dd949;
 }
 .btn-outline-success{
+  border: none;
+}
+.MenuItm{
+  margin: 0px 3px;
+}
+.Deflt{
+  color: #cec9d2;
+  font-weight: 500;
+}
+.nav-link{
+  color: #b1b1b1;
+}
+.btn{
   border: none;
 }

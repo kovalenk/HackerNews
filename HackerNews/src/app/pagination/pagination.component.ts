@@ -28,11 +28,12 @@ export class PaginationComponent implements OnInit {
   }
 
   ngOnInit() {
+    // console.log("page");
     this.route.url.subscribe( res => {this.str = res[0].path; this.page = res[1].path;});
+    // console.log(this.str);
+    // console.log(document.getElementById(this.str));
     this.data.getNews(this.str).subscribe(res => {
       this.collectionSize = Object.keys(res).length;
-      console.log(this.collectionSize);
-
     });
     this.loadPage();
   }
@@ -40,8 +41,6 @@ export class PaginationComponent implements OnInit {
     this.collectionSize = 350;
     const ArrBgn = (this.page-1) * this.pageSize;
     const ArrEnd = ArrBgn + this.pageSize;
-    console.log(this.str, this.page);
-    console.log(ArrBgn, ArrEnd);
 
     this.ArrList = this.data.listViewCreate(this.str, ArrBgn, ArrEnd );
   }
