@@ -7,7 +7,6 @@ import {Cacheable} from 'ngx-cacheable';
 })
 
 export class GivelistService {
-  private collectionSize: any;
 
   constructor(
     private http: HttpClient
@@ -17,33 +16,33 @@ export class GivelistService {
   @Cacheable()
   getNews(stories: string) {
     return this.http.get(
-      `https://hacker-news.firebaseio.com/v0/${stories}.json?print=pretty`
+      `https://hacker-news.firebaseio.com/v0/${stories}.json?print=pretty`  // get arr from API
     );
   }
 
   @Cacheable()
   getData(StoryId: number): any {
     return this.http.get(
-      `https://hacker-news.firebaseio.com/v0/item/${StoryId}.json?print=pretty`
+      `https://hacker-news.firebaseio.com/v0/item/${StoryId}.json?print=pretty` // get item information list
     );
   }
 
   listViewCreate(type: string, begin: number, end: number) {
-    return new Promise(resolve => {
-      this.getNews(type).subscribe( (res: any[]) => {
+    return new Promise(resolve => {                           // make new Promise
+      this.getNews(type).subscribe( (res: any[]) => {            // get all stories id list
         const requests = res.slice(begin, end)
-          .map(id => this.getData(id).toPromise());
+          .map(id => this.getData(id).toPromise());          // make array from ... to items
         Promise.all(requests).then(items => {
           resolve({
-            total: res.length,
-            items: items
+            total: res.length,                                         // return all stories length
+            items: items                                               // return array(from, to)
           });
         });
       });
     });
   }
 
-  secondsConv(num: number) {
+  secondsConverter(num: number) {                                      // converter to days/ hours / minutes
     const Now = Math.round(new Date().getTime() / 1000.0);
     const diff = Now - num;
     if (Math.floor(diff / (3600 * 24)) > 0) {

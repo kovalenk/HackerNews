@@ -12,7 +12,7 @@ import {HttpClient} from "@angular/common/http";
 export class PaginationComponent implements OnInit {
   pageSize = 10;
   page: any;
-  collectionSize: number;
+  collectionSize = 500;
   public ArrList = [];
   public str: any;
 
@@ -25,7 +25,7 @@ export class PaginationComponent implements OnInit {
 
   change() {
     this.router.navigate(['/' + this.str + '/' + this.page]);
-   // this.loadPage();
+    this.loadPage();
   }
 
   ngOnInit() {
@@ -37,7 +37,6 @@ export class PaginationComponent implements OnInit {
   }
 
   loadPage() {
-    // this.collectionSize = 500;
     const ArrBgn = (this.page - 1) * this.pageSize;
     const ArrEnd = ArrBgn + this.pageSize;
     this.service.listViewCreate(this.str, ArrBgn, ArrEnd).then(data => {
@@ -45,7 +44,7 @@ export class PaginationComponent implements OnInit {
       this.ArrList = Object.values(data)[1];
       this.ArrList.map(val => {
         if ((!/^[0-9]+$/.test(val.time)) === false){
-          val.time = this.service.secondsConv(val.time);
+          val.time = this.service.secondsConverter(val.time);
         }
       });
     });
