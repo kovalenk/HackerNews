@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {GivelistService} from "../givelist.service";
 import {Router} from "@angular/router";
 import {ActivatedRoute} from "@angular/router";
@@ -10,38 +10,44 @@ import {HttpClient} from "@angular/common/http";
   styleUrls: ['./pagination.component.css']
 })
 export class PaginationComponent implements OnInit {
-  page : any;
-  collectionSize: any;
   pageSize = 10;
+  page: any;
+  collectionSize: number;
   public ArrList = [];
-  public str :any;
+  public str: any;
+
   constructor(
     private http: HttpClient,
-    private data: GivelistService,
+    private service: GivelistService,
     private router: Router,
     private route: ActivatedRoute) {
   }
-  change() {
-    this.router.navigate(['/'+this.str+'/'+this.page]);
-    this.loadPage();
 
+  change() {
+    this.router.navigate(['/' + this.str + '/' + this.page]);
+   // this.loadPage();
   }
 
   ngOnInit() {
-    // console.log("page");
-    this.route.url.subscribe( res => {this.str = res[0].path; this.page = res[1].path;});
-    // console.log(this.str);
-    // console.log(document.getElementById(this.str));
-    this.data.getNews(this.str).subscribe(res => {
-      this.collectionSize = Object.keys(res).length;
+    this.route.url.subscribe(res => {
+      this.str = res[0].path;
+      this.page = res[1].path;
     });
     this.loadPage();
   }
-  loadPage() {
-    this.collectionSize = 350;
-    const ArrBgn = (this.page-1) * this.pageSize;
-    const ArrEnd = ArrBgn + this.pageSize;
 
-    this.ArrList = this.data.listViewCreate(this.str, ArrBgn, ArrEnd );
+  loadPage() {
+    // this.collectionSize = 500;
+    const ArrBgn = (this.page - 1) * this.pageSize;
+    const ArrEnd = ArrBgn + this.pageSize;
+    this.service.listViewCreate(this.str, ArrBgn, ArrEnd).then(data => {
+      this.collectionSize = Object.values(data)[0];
+      this.ArrList = Object.values(data)[1];
+      this.ArrList.map(val => {
+        if ((!/^[0-9]+$/.test(val.time)) === false){
+          val.time = this.service.secondsConv(val.time);
+        }
+      });
+    });
   }
 }

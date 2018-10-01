@@ -1,21 +1,26 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Cacheable } from 'ngx-cacheable';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Cacheable} from 'ngx-cacheable';
+
 @Injectable({
   providedIn: 'root'
 })
 
 export class GivelistService {
   private collectionSize: any;
+
   constructor(
     private http: HttpClient
-    ) {}
+  ) {
+  }
+
   @Cacheable()
   getNews(stories: string) {
     return this.http.get(
       `https://hacker-news.firebaseio.com/v0/${stories}.json?print=pretty`
     );
   }
+
   @Cacheable()
   getData(StoryId: number): any {
     return this.http.get(
@@ -23,17 +28,19 @@ export class GivelistService {
     );
   }
 
-  listViewCreate(type: string, begin: number, end: number ): any {
-    let ListAr = [];
-    this.getNews(type).subscribe( res => {
-      for (begin; begin < end; begin++) {
-        this.getData(res[begin]).subscribe(rez => {
-          rez.time = this.secondsConv(rez.time);
-          ListAr.push(rez);
+  listViewCreate(type: string, begin: number, end: number) {
+    return new Promise(resolve => {
+      this.getNews(type).subscribe( (res: any[]) => {
+        const requests = res.slice(begin, end)
+          .map(id => this.getData(id).toPromise());
+        Promise.all(requests).then(items => {
+          resolve({
+            total: res.length,
+            items: items
+          });
         });
-      }
+      });
     });
-    return ListAr;
   }
 
   secondsConv(num: number) {
