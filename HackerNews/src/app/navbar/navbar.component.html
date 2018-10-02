@@ -1,41 +1,17 @@
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
   <a routerLink="/top" class="offset-2 navbar-brand">
-
     <img class="Logo" src="../../assets/img/MainLogo.png" alt="logo" height="50" width="50"/></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse">
-    <ul class="navbar-nav mr-auto" (click)="active($event)" id="NavItems">
-      <li class="nav-item MenuItm">
-        <a *ngIf="type == 'topstories'; else top" routerLink="/topstories/1" class="Active Deflt nav-pills btn btn-outline-success" >Top</a>
-        <ng-template #top>
-          <a routerLink="/topstories/1" id="topstories" class="Deflt nav-pills btn btn-outline-success" >Top</a>
-        </ng-template>
-      </li>
-      <li class="nav-item MenuItm">
-        <a *ngIf="type == 'newstories'; else new" routerLink="/newstories/1" class="Active Deflt nav-pills btn btn-outline-success">New</a>
-        <ng-template #new>
-          <a routerLink="/newstories/1" id="newstories"  class="Deflt nav-pills btn btn-outline-success">New</a>
-        </ng-template>
-      </li>
-      <li class="nav-item MenuItm">
-        <a *ngIf="type == 'showstories'; else show" routerLink="/showstories/1" class="Active Deflt nav-pills btn btn-outline-success">Show</a>
-        <ng-template #show>
-          <a routerLink="/showstories/1" id="showstories" class="Deflt nav-pills btn btn-outline-success">Show</a>
-        </ng-template>
-      </li>
-      <li class="nav-item MenuItm">
-        <a *ngIf="type == 'askstories'; else ask" routerLink="/askstories/1" class="Active Deflt nav-pills btn btn-outline-success">Ask</a>
-        <ng-template #ask>
-          <a routerLink="/askstories/1" class="Deflt nav-pills btn btn-outline-success">Ask</a>
-        </ng-template>
-      </li>
-      <li class="nav-item MenuItm">
-        <a *ngIf="type == 'jobstories'; else job" routerLink="/jobstories/1" class="Active Deflt nav-pills btn btn-outline-success">Job</a>
-        <ng-template #job>
-          <a routerLink="/jobstories/1" class="Deflt nav-pills btn btn-outline-success">Job</a>
-        </ng-template>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item MarginItems" *ngFor="let items of array">
+        <div class="MenuItems">
+          <span class="MenuSpan" routerLink="/{{items.type}}/" routerLinkActive="Active">
+          </span>
+          <a class="Deflt nav-pills" routerLink="/{{items.type}}/1" >{{items.name}}</a>
+        </div>
       </li>
     </ul>
   </div>

@@ -3,20 +3,15 @@ import {HttpClient} from '@angular/common/http';
 import {Cacheable} from 'ngx-cacheable';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
 export class GivelistService {
-
-  constructor(
-    private http: HttpClient
-  ) {
-  }
+  constructor(private http: HttpClient) {}
 
   @Cacheable()
   getNews(stories: string) {
     return this.http.get(
-      `https://hacker-news.firebaseio.com/v0/${stories}.json?print=pretty`  // get arr from API
+      `https://hacker-news.firebaseio.com/v0/${stories}.json?print=pretty` // get arr from API
     );
   }
 
@@ -28,21 +23,25 @@ export class GivelistService {
   }
 
   listViewCreate(type: string, begin: number, end: number) {
-    return new Promise(resolve => {                           // make new Promise
-      this.getNews(type).subscribe( (res: any[]) => {            // get all stories id list
-        const requests = res.slice(begin, end)
-          .map(id => this.getData(id).toPromise());          // make array from ... to items
+    return new Promise(resolve => {
+      // make new Promise
+      this.getNews(type).subscribe((res: any[]) => {
+        // get all stories id list
+        const requests = res
+          .slice(begin, end)
+          .map(id => this.getData(id).toPromise()); // make array from ... to items
         Promise.all(requests).then(items => {
           resolve({
-            total: res.length,                                         // return all stories length
-            items: items                                               // return array(from, to)
+            total: res.length, // return all stories length
+            items: items, // return array(from, to)
           });
         });
       });
     });
   }
 
-  secondsConverter(num: number) {                                      // converter to days/ hours / minutes
+  secondsConverter(num: number) {
+    // converter to days/ hours / minutes
     const Now = Math.round(new Date().getTime() / 1000.0);
     const diff = Now - num;
     if (Math.floor(diff / (3600 * 24)) > 0) {
@@ -67,5 +66,4 @@ export class GivelistService {
       }
     }
   }
-
 }

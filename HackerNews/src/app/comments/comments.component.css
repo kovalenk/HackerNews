@@ -1,20 +1,20 @@
-.Ctitle{
-  padding: 20px;
+.Ctitle {
+	padding: 20px;
 }
-.CommentContainer{
-  margin: 5px 0px;
-  border: 2px solid gray;
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  background-color: #ffefef;
+.CommentContainer {
+	margin: 5px 0px;
+	border: 2px solid gray;
+	width: 100%;
+	padding: 10px;
+	border-radius: 5px;
+	background-color: #ffefef;
 }
 
-.userIcon img{
-  width: 50px;
-  height: 50px;
+.userIcon img {
+	width: 50px;
+	height: 50px;
 }
-.CommentsStore h5{
-  padding-left: 10px;
-  padding-top: 1px;
+.CommentsStore h5 {
+	padding-left: 10px;
+	padding-top: 1px;
 }

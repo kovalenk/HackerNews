@@ -1,41 +1,73 @@
-.Active{
-  background-color: #569851;
-  color: white;
-  font-weight: 500;
+.Active {
+	background-color: #569851;
+	color: white;
+	font-weight: 500;
 }
 .btn-outline-success:hover {
-  color: #fff;
-  background-color: #569851;
-  border-color: #28a745;
-
+	color: #fff;
+	background-color: #569851;
+	border-color: #28a745;
 }
 .nav-link {
-  margin: 7px 9px;
+	margin: 7px 9px;
 }
 
 .nav-link:hover {
 }
 .Logo {
-  height: 40px;
-  width: 50px;
-  padding: 0px 5px;
+	height: 40px;
+	width: 50px;
+	padding: 0px 5px;
+	border-radius: 3px;
+	margin: 0px 2px;
+	background-color: #1dd949;
+}
+.btn-outline-success {
+	border: none;
+}
+
+.nav-link {
+	color: #b1b1b1;
+}
+.btn {
+	border: none;
+}
+.MenuSpan{
   border-radius: 3px;
-  margin: 0px 2px;
-  background-color: #1dd949;
+  position: absolute;
+  width: 64px;
+  height: 40px;
+  padding-top: 7px;
+  text-align: center;
+  z-index: -1;
 }
-.btn-outline-success{
-  border: none;
-}
-.MenuItm{
-  margin: 0px 3px;
-}
-.Deflt{
+.Deflt {
   color: #cec9d2;
   font-weight: 500;
+  border-radius: 3px;
+  position: absolute;
+  width: 64px;
+  height: 40px;
+  padding-top: 7px;
+  text-align: center;
 }
-.nav-link{
-  color: #b1b1b1;
+.MenuItems{
+  border-radius: 3px;
+  width: 65px;
+  height: 40px;
 }
-.btn{
-  border: none;
+.MarginItems {
+  margin: 0px 2px;
+}
+@media only screen and (max-width: 575px) {
+  .MenuSpan, .Deflt, .MenuItems{
+    left: 2%;
+    width: 96%
+  }
+  .MarginItems {
+    margin: 2px;
+  }
+  .MarginItems:first-child{
+    margin-top: 8px;
+  }
 }

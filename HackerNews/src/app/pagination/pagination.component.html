@@ -12,10 +12,11 @@
           <h6 style="font-weight: 700; padding: 0px 5px;">| </h6>
           <div class="comments">
             <div *ngIf="rez.descendants == '0' || rez.descendants == undefined ; else Comments">
-               <a class="comments" routerLink="/comments" [queryParams]="{'id': rez.id }" ><h6> Discuss </h6></a>
+              <a class="comments" routerLink="/comments" [queryParams]="{'id': rez.id }"><h6> Discuss </h6></a>
             </div>
-            <ng-template #Comments >
-               <a class="comments" routerLink="/comments" [queryParams]="{'id': rez.id}" ><h6> {{rez.descendants}} comments</h6></a>
+            <ng-template #Comments>
+              <a class="comments" routerLink="/comments" [queryParams]="{'id': rez.id}"><h6> {{rez.descendants}}
+                comments</h6></a>
             </ng-template>
           </div>
         </div>
@@ -24,7 +25,7 @@
         </div>
         <div class="store row">
           <img src="../../assets/img/_ionicons_svg_md-star.svg" alt="star Icon">
-          <h4 >{{rez.score}}</h4>
+          <h4>{{rez.score}}</h4>
         </div>
       </div>
     </div>
@@ -32,6 +33,13 @@
 </div>
 <div class="foter">
   <div class="pgcontainer">
-    <ngb-pagination class="d-flex justify-content-center" [collectionSize]="collectionSize" [maxSize]="5" [pageSize]="pageSize" [(page)]="page" [rotate]="true" (pageChange)="change()"></ngb-pagination>
+    <div *ngIf="innerWidth > 700; else adaptive" >
+      <ngb-pagination class="d-flex justify-content-center" [collectionSize]="collectionSize" [maxSize]="5"
+                      [pageSize]="pageSize" [(page)]="page" [rotate]="true" (pageChange)="change()"></ngb-pagination>
+    </div>
+    <ng-template #adaptive>
+      <ngb-pagination class="d-flex justify-content-center" [collectionSize]="collectionSize" [maxSize]="3"
+                      [pageSize]="pageSize" [(page)]="page" [rotate]="true" (pageChange)="change()"></ngb-pagination>
+    </ng-template>
   </div>
 </div>
