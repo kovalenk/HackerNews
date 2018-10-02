@@ -17,24 +17,28 @@
   <div class="Ctitle">
     <h3>Comments</h3>
   </div>
-  <div id="CommentContainer"></div>
-
-  <div class="CommentContainer" *ngFor="let items of Comments">
-    <div class="item">
-      <div class="row">
-        <div class="col-sm-4 userIcon text-sm-center">
-          <img src="../../assets/img/user.svg" alt="icon">
-          <h4> By {{items.by}}</h4>
+  <div *ngIf="CommentsStatus === true; else NullValCheck">
+    <div class="CommentContainer" *ngFor="let items of Comments">
+      <div class="item">
+        <div class="row">
+          <div class="col-sm-4 userIcon text-sm-center">
+            <img src="../../assets/img/user.svg" alt="icon">
+            <h4> By {{items.by}}</h4>
+          </div>
+          <div class="offset-sm-3 col-sm-5 time text-sm-right">
+            <h5> {{items.time}}</h5>
+          </div>
         </div>
-        <div class="offset-sm-3 col-sm-5 time text-sm-right">
-          <h5> {{items.time}}</h5>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-12 text">
-          <p>{{items.text}}</p>
+        <div class="row">
+          <div class="col-sm-12 text">
+            <p>{{items.text}}</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
+  <ng-template #NullValCheck>
+    <h5>No comments yet :(</h5>
+  </ng-template>
+
 </div>

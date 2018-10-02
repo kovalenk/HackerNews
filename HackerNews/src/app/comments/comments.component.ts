@@ -4,8 +4,6 @@ import {GivelistService} from '../givelist.service';
 import {ActivatedRoute} from '@angular/router';
 import {Subscription} from 'rxjs';
 
-import * as $ from 'jquery';
-
 @Component({
   selector: 'app-comments',
   templateUrl: './comments.component.html',
@@ -16,6 +14,7 @@ export class CommentsComponent implements OnInit {
   public by: string;
   public time: any;
   public score: number;
+  public CommentsStatus : boolean;
   public Comments = [];
   public querySubscription: Subscription;
   constructor(
@@ -40,8 +39,11 @@ export class CommentsComponent implements OnInit {
       this.time = this.data.secondsConverter(rez.time);
       this.score = rez.score;
       if (rez.descendants === 0 || rez.descendants === undefined) {
-        $('#CommentContainer').append('<h5> No comments yet :(</h5>');
-      } else {
+        this.CommentsStatus = false;
+      }
+      else
+      {
+        this.CommentsStatus = true;
         this.getKidsData(rez.kids);
       }
     });
