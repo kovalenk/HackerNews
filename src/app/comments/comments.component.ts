@@ -14,7 +14,7 @@ export class CommentsComponent implements OnInit {
   public by: string;
   public time: any;
   public score: number;
-  public CommentsStatus : boolean;
+  public CommentsStatus: boolean;
   public Comments = [];
   public querySubscription: Subscription;
   constructor(
@@ -40,9 +40,7 @@ export class CommentsComponent implements OnInit {
       this.score = rez.score;
       if (rez.descendants === 0 || rez.descendants === undefined) {
         this.CommentsStatus = false;
-      }
-      else
-      {
+      } else {
         this.CommentsStatus = true;
         this.getKidsData(rez.kids);
       }
