@@ -6,12 +6,12 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
-  array: Array<any> = [
-    {type: 'topstories', name: 'Top'},
-    {type: 'newstories', name: 'New'},
-    {type: 'showstories', name: 'Show'},
-    {type: 'askstories', name: 'Ask'},
-    {type: 'jobstories', name: 'Jobs'},
+  MenuItems: Array<any> = [
+    {storyType: 'topstories', PageName: 'Top'},
+    {storyType: 'newstories', PageName: 'New'},
+    {storyType: 'showstories', PageName: 'Show'},
+    {storyType: 'askstories', PageName: 'Ask'},
+    {storyType: 'jobstories', PageName: 'Jobs'},
   ];
   constructor() {}
   ngOnInit() {}

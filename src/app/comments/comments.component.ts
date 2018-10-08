@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {GivelistService} from '../givelist.service';
 import {ActivatedRoute} from '@angular/router';
@@ -9,56 +9,80 @@ import {Subscription} from 'rxjs';
   templateUrl: './comments.component.html',
   styleUrls: ['./comments.component.css'],
 })
-export class CommentsComponent implements OnInit {
+export class CommentsComponent implements OnInit, OnDestroy {
   public title: string;
   public by: string;
   public time: any;
   public score: number;
   public CommentsStatus: boolean;
   public Comments = [];
+  public text: string;
   public querySubscription: Subscription;
+
   constructor(
     private http: HttpClient,
     private data: GivelistService,
     private route: ActivatedRoute
-  ) {
+  ) {}
+
+  ngOnInit() {
     this.querySubscription = this.route.queryParams.subscribe(
-      (queryParam: any) => {
+      async queryParam => {
         const id = queryParam['id'];
-        this.loadPage(id);
+        await this.loadPage(id);
       }
     );
   }
 
-  ngOnInit() {}
-
-  loadPage(id: number) {
-    this.data.getData(id).subscribe(rez => {
+  async loadPage(id: number) {
+    await this.data.getData(id).then(async rez => {
       this.title = rez.title;
       this.by = rez.by;
-      this.time = this.data.secondsConverter(rez.time);
+      this.data.secondsConverter(rez.time).then(convert => {
+        this.time = convert;
+      });
       this.score = rez.score;
+      this.text = rez.text;
       if (rez.descendants === 0 || rez.descendants === undefined) {
         this.CommentsStatus = false;
       } else {
         this.CommentsStatus = true;
-        this.getKidsData(rez.kids);
+        await this.getKidsData(rez.kids);
       }
     });
   }
 
-  getKidsData(KidsArr: any) {
-    for (let i = 0; i < KidsArr.length; i++) {
-      this.data.getData(KidsArr[i]).subscribe(comm => {
-        if (comm.kids === undefined) {
-          if (comm.deleted !== true || comm.deleted === undefined) {
-            comm.time = this.data.secondsConverter(comm.time);
-            this.Comments.push(comm);
+  async getKidsData(KidsArray: any) {
+    const length = KidsArray.length - 1;
+    KidsArray.map(async (val, i) => {
+      this.data.getData(val).then(comments => {
+        if (comments !== null) {
+          if (comments.deleted === undefined) {
+            this.data.secondsConverter(comments.time).then(convert => {
+              comments.time = convert;
+            });
+            if (comments.kids === undefined) {
+              this.Comments.push(comments);
+              KidsArray.shift(comments.id);
+            } else {
+              this.Comments.push(comments);
+              comments.kids.forEach(function(value) {
+                KidsArray.push(value);
+              });
+              KidsArray.shift(comments.id);
+            }
+          } else {
+            KidsArray.shift();
           }
-        } else {
-          this.getKidsData(comm.kids);
+          if (i === length && i !== -1) {
+            this.getKidsData(KidsArray);
+          }
         }
       });
-    }
+    });
+  }
+
+  ngOnDestroy() {
+    this.querySubscription.unsubscribe();
   }
 }

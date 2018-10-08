@@ -44,9 +44,9 @@ export class PaginationComponent implements OnInit {
       this.collectionSize = Object.values(data)[0];
       this.ArrList = Object.values(data)[1];
       this.ArrList.map(val => {
-        if (!/^[0-9]+$/.test(val.time) === false) {
-          val.time = this.service.secondsConverter(val.time);
-        }
+        this.service.secondsConverter(val.time).then(convert => {
+          val.time = convert;
+        });
       });
     });
   }
