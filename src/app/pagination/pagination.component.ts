@@ -21,7 +21,8 @@ export class PaginationComponent implements OnInit {
     private service: GivelistService,
     private router: Router,
     private route: ActivatedRoute
-  ) {}
+  ) {
+  }
 
   change() {
     this.router.navigate(['/' + this.str + '/' + this.page]);
@@ -38,6 +39,7 @@ export class PaginationComponent implements OnInit {
   }
 
   loadPage() {
+
     const ArrBgn = (this.page - 1) * this.pageSize;
     const ArrEnd = ArrBgn + this.pageSize;
     this.service.listViewCreate(this.str, ArrBgn, ArrEnd).then(data => {

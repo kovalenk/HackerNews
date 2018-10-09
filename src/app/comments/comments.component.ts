@@ -15,7 +15,7 @@ export class CommentsComponent implements OnInit, OnDestroy {
   public time: any;
   public score: number;
   public CommentsStatus: boolean;
-  public Comments = [];
+  public Comments = new Set();
   public text: string;
   public querySubscription: Subscription;
 
@@ -23,7 +23,8 @@ export class CommentsComponent implements OnInit, OnDestroy {
     private http: HttpClient,
     private data: GivelistService,
     private route: ActivatedRoute
-  ) {}
+  ) {
+  }
 
   ngOnInit() {
     this.querySubscription = this.route.queryParams.subscribe(
@@ -62,10 +63,10 @@ export class CommentsComponent implements OnInit, OnDestroy {
               comments.time = convert;
             });
             if (comments.kids === undefined) {
-              this.Comments.push(comments);
+              this.Comments.add(comments);
               KidsArray.shift(comments.id);
             } else {
-              this.Comments.push(comments);
+              this.Comments.add(comments);
               comments.kids.forEach(function(value) {
                 KidsArray.push(value);
               });
