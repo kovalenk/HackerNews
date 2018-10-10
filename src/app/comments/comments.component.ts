@@ -1,13 +1,13 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {GivelistService} from '../givelist.service';
-import {ActivatedRoute} from '@angular/router';
-import {Subscription} from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { GivelistService } from '../givelist.service';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-comments',
   templateUrl: './comments.component.html',
-  styleUrls: ['./comments.component.css'],
+  styleUrls: ['./comments.component.css']
 })
 export class CommentsComponent implements OnInit, OnDestroy {
   public title: string;
@@ -28,15 +28,15 @@ export class CommentsComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.querySubscription = this.route.queryParams.subscribe(
-      async queryParam => {
+      queryParam => {
         const id = queryParam['id'];
-        await this.loadPage(id);
+        this.loadPage(id);
       }
     );
   }
 
-  async loadPage(id: number) {
-    await this.data.getData(id).then(async rez => {
+  loadPage(id: number) {
+    this.data.getData(id).then(rez => {
       this.title = rez.title;
       this.by = rez.by;
       this.data.secondsConverter(rez.time).then(convert => {
@@ -48,39 +48,45 @@ export class CommentsComponent implements OnInit, OnDestroy {
         this.CommentsStatus = false;
       } else {
         this.CommentsStatus = true;
-        await this.getKidsData(rez.kids);
+        this.getKidsData(rez.kids);
       }
     });
   }
 
-  async getKidsData(KidsArray: any) {
-    const length = KidsArray.length - 1;
-    KidsArray.map(async (val, i) => {
-      this.data.getData(val).then(comments => {
-        if (comments !== null) {
-          if (comments.deleted === undefined) {
-            this.data.secondsConverter(comments.time).then(convert => {
-              comments.time = convert;
-            });
-            if (comments.kids === undefined) {
-              this.Comments.add(comments);
-              KidsArray.shift(comments.id);
-            } else {
-              this.Comments.add(comments);
-              comments.kids.forEach(function(value) {
-                KidsArray.push(value);
-              });
-              KidsArray.shift(comments.id);
-            }
-          } else {
-            KidsArray.shift();
-          }
-          if (i === length && i !== -1) {
-            this.getKidsData(KidsArray);
-          }
+  getDataFromId(id: any) {
+    return this.http.get(`https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`);
+  }
+
+  kidsFilter(data: any) {
+    if (data !== null) {
+      if (data.deleted === undefined) {
+        this.data.secondsConverter(data.time).then(convert => {
+          data.time = convert;
+        });
+        this.Comments.add(data);
+        if (data.kids !== undefined) {
+          return data.kids;
+        } else {
+          return [];
         }
+      }else {
+        return [];
+      }
+    }
+  }
+
+  getKidsData(KidsArray: any) {
+    if (KidsArray.length !== 0) {
+      let fullKids = [];
+      const kidsArr = KidsArray.map(async id => {
+        const info = await this.getDataFromId(id).toPromise();
+        const kids = await this.kidsFilter(info);
+        fullKids = [...fullKids, ...kids];
       });
-    });
+      Promise.all(kidsArr).then(result => {
+        this.getKidsData(fullKids);
+      });
+    }
   }
 
   ngOnDestroy() {
