@@ -1,13 +1,13 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { GivelistService } from '../givelist.service';
-import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {GivelistService} from '../givelist.service';
+import {ActivatedRoute} from '@angular/router';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-comments',
   templateUrl: './comments.component.html',
-  styleUrls: ['./comments.component.css']
+  styleUrls: ['./comments.component.css'],
 })
 export class CommentsComponent implements OnInit, OnDestroy {
   public title: string;
@@ -23,16 +23,13 @@ export class CommentsComponent implements OnInit, OnDestroy {
     private http: HttpClient,
     private data: GivelistService,
     private route: ActivatedRoute
-  ) {
-  }
+  ) {}
 
   ngOnInit() {
-    this.querySubscription = this.route.queryParams.subscribe(
-      queryParam => {
-        const id = queryParam['id'];
-        this.loadPage(id);
-      }
-    );
+    this.querySubscription = this.route.queryParams.subscribe(queryParam => {
+      const id = queryParam['id'];
+      this.loadPage(id);
+    });
   }
 
   loadPage(id: number) {
@@ -54,7 +51,9 @@ export class CommentsComponent implements OnInit, OnDestroy {
   }
 
   getDataFromId(id: any) {
-    return this.http.get(`https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`);
+    return this.http.get(
+      `https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`
+    );
   }
 
   kidsFilter(data: any) {
@@ -69,7 +68,7 @@ export class CommentsComponent implements OnInit, OnDestroy {
         } else {
           return [];
         }
-      }else {
+      } else {
         return [];
       }
     }

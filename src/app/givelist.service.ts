@@ -14,7 +14,7 @@ export class GivelistService {
       `https://hacker-news.firebaseio.com/v0/${stories}.json?print=pretty` // get arr from API
     );
   }
-  getData(StoryId: number):any {
+  getData(StoryId: number): any {
     return new Promise(resolve => {
       this.http
         .get(
